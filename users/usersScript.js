@@ -11,18 +11,20 @@ document.addEventListener("DOMContentLoaded", function () {
 function displayUsers() {
     const userList = document.getElementById("user-list");
     userList.innerHTML = "";
-    pageUsers.forEach(users => {
+    pageUsers.forEach(user => {
         const listItem = document.createElement("li");
         listItem.setAttribute("class", "card");
         // Adiciona todos os campos disponíveis e o botão de remoção
-        listItem.innerHTML = `<div class="space"><strong>Nome:</strong> ${users.firstName}</div>
-    <div class="space"><strong>Sobrenome:</strong> ${users.lastName}</div>
-    <div class="space"><strong>Email:</strong> ${users.email}</div>
-    <div class="space"><strong>idade:</strong> ${users.age || 'N/A'}</div>
-    <div class="space"><strong>Foto:</strong> ${users.image || 'N/A'}</div>
-    <button onclick="removeUser(${users.id})" class="remove-btn">
-    <i class="bi bi-trash"></i>
-    </button>`;
+        listItem.innerHTML = ` 
+        
+        <div class="space"><strong> <img src=${user.image}></strong></div>
+        <div class="space"><strong>Nome:</strong> ${user.firstName}</div>
+        <div class="space"><strong>Sobrenome:</strong> ${user.lastName}</div>
+        <div class="space"><strong>Email:</strong> ${user.email}</div>
+        <div class="space"><strong>Idade:</strong> ${user.age}</div>
+        <button onclick="removeUser(${user.id})" class="remove-btn">
+        <i class="bi bi-trash"></i>
+        </button>`;
         userList.appendChild(listItem);
     });
 }
@@ -35,8 +37,8 @@ function fetchUsers() {
         .then(response => response.json())
         .then(users => {
             // Itera sobre a lista de usuários e cria elementos HTML
-            users.forEach(users => {
-                pageUsers.push(new users (users.id, users.firstName, users.lastName, users.email, users.age, users.image));
+            users.users.forEach(user => {
+                pageUsers.push(new User(user.firstName, user.lastName, user.username, user.email, user.age, user.image));
             });
             console.log(pageUsers);
             // Mostra lista de usuários
@@ -56,7 +58,7 @@ function addUser() {
     const image = document.getElementById("image").value;
     // Verifica se o campo de nome não está vazio
     if (firstName.trim() !== "") {
-        pageUsers.push(new users(id, firstName, lastName, email, age, image));
+        pageUsers.push(new User(id, firstName, lastName, email, age, image));
         // Limpa o formulário
         addUserForm.reset();
         // Mostra lista de usuários
@@ -68,7 +70,7 @@ function removeUser(userId) {
     // Apenas checando se é o usuário correto
     console.log("Removendo usuário com ID:", userId);
     // Encontrando índice do usuário que vai ser removido
-    const userIndexToRemove = pageUsers.findIndex((users) => users.id === userId);
+    const userIndexToRemove = pageUsers.findIndex((user) => user.id === userId);
     // Removendo usuário da lista
     pageUsers.splice(userIndexToRemove, 1);
     // Atualizando lista na tela
