@@ -1,15 +1,26 @@
-/*body {
-    font-family: 'Arial', sans-serif;
+*{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    width: 100%;
+    display: flex;
     background-color: #f5f5f5;
-}*/
+}
 
 #app {
     max-width: 1024px;
     margin: 20px auto;
     background-color: #fff;
     padding: 20px;
+    padding-top: 75px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -106,34 +117,63 @@ button.remove-btn:hover {
 }
 
 /*index.html*/
+/*header*/
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
-    text-decoration: none;
-    list-style: none;
+header{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 1rem;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    top:0;
+    right: 0;
+    z-index: 1000;
+    position: fixed;
+    transition: all .35s ease;
+    background-color: #eac222;
+    padding: 14px 14%;
+}
+.logo{
+    font-size: 20px;
+    padding-left: 20px;
+}
+.cabecalho-link{
+    display: flex;
+    gap:3rem;
+}
+.cabecalho-link a{
+    color: black;
+    font-weight: 700;
+    transition: 0.3s;
+}
+.cabecalho-link a:hover{
+    color:white;
+}
+.icon span{
+    font-size: 2rem;
+    cursor: pointer;
+}
+.icon span:hover{
+    color:white;
 }
 
 /*slide*/
-body{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .slider{
     margin: 0 auto;
-    width: 800px;
+    padding-top:70px; /*ficar em baixo do nav*/
+    width: 100%;
     height: 400px;
     overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    background-color: #d51425;
 }
 
 .slides{
-    width: 400%;
+    width: 70%;
     height: 400px;
     display: flex;
 }
@@ -143,19 +183,19 @@ body{
 }
 
 .slide{
-    width: 25%;
+    width: 400%;
     position: relative;
     transition: 2s;
 }
 
 .slide img{
-    width: 750px;
+    width: 500px;
 }
 
 .manual-navigation{
     position:absolute;
     width: 800px;
-    margin-top: -40px;
+    align-items: center;
     display: flex;
     justify-content: center;
 }
@@ -179,21 +219,18 @@ body{
 #radio1:checked ~ .first{
     margin-left:0;
 }
-
 #radio2:checked ~ .first{
     margin-left:-25%;
 }
-
 #radio3:checked ~ .first{
     margin-left:-50%;
 }
-
 #radio4:checked ~ .first{
     margin-left:-75%;
 }
 
 .navigation-auto div{
-    border: 2px solid #20a6ff;
+    border: 2px solid #fff;
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
