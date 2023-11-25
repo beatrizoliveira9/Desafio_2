@@ -87,6 +87,16 @@ ul {
     padding: 5px 0;
 }
 
+.space img{
+    width: 200px;
+    height: 200px;
+}
+
+.space strong{
+    font-size: 15px;
+    color:black;
+}
+
 strong {
     color: #333;
 }

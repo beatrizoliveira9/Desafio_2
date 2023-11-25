@@ -19,8 +19,11 @@ function displayUsers() {
 
         <div class="space"><strong> <img src=${products.thumbnail}></strong></div>
         <div class="space"><strong>Título:</strong> ${products.title}</div>
-        <div class="space"><strong>Descrição:</strong> ${products.description}</div>
         <div class="space"><strong>Preço: R$${products.price}</strong></div>
+
+        
+        <div class="space"><strong>Descrição:</strong> ${products.description}</div>
+        
         <div class="space"><strong>Marca:</strong> ${products.brand}</div>
         <div class="space"><strong>Categoria:</strong> ${products.category}</div>
         <button onclick="removeUser(${products.id})" class="remove-btn">
@@ -39,7 +42,7 @@ function fetchUsers() {
         .then(products => {
             // Itera sobre a lista de usuários e cria elementos HTML
             products.products.forEach(products => {
-                pageproducts.push(new product (products.id, products.title, products.description, products.price, products.brand, products.category, products.thumbnail));
+                pageproducts.push(new product(products.id, products.title, products.description, products.price, products.brand, products.category, products.thumbnail));
             });
             console.log(pageproducts);
             // Mostra lista de usuários
@@ -72,7 +75,7 @@ function removeUser(userId) {
     // Apenas checando se é o usuário correto
     console.log("Removendo usuário com ID:", userId);
     // Encontrando índice do usuário que vai ser removido
-    const userIndexToRemove = pageproducts.findIndex((productsr) => products.id === userId);
+    const userIndexToRemove = pageproducts.findIndex((products) => products.id === userId);
     // Removendo usuário da lista
     pageproducts.splice(userIndexToRemove, 1);
     // Atualizando lista na tela
