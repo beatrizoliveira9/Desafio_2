@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
     fetchUsers();
 });
 
+
+
 function displayUsers() {
     const userList = document.getElementById("user-list");
     userList.innerHTML = "";

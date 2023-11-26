@@ -147,6 +147,8 @@ header{
 .logo{
     font-size: 20px;
     padding-left: 20px;
+    font-weight: bold;
+    text-shadow: 0 0 10px black;
 }
 .cabecalho-link{
     display: flex;
