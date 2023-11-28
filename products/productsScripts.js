@@ -86,20 +86,7 @@ function fetchUsers() {
 }
 
 function addUser() {
-    //const isTitleValid = checkTitle();
-    //const isDescriptionValid = checkDescription();
-    //const isPriceValid = checkPrice();
-   // const isBrandValid = checkBrand();
-    //const isCategoryValid = checkCategory();
-   // const isThumbnailValid = checkThumbnail();
-
-    //if (isTitleValid && isDescriptionValid && isPriceValid && isBrandValid && isCategoryValid && isThumbnailValid) {
-       // console.log('Formulário válido. Adicionando usuário.');
-      //  addUser();
-   // }else{
-    //    console.log('Formulário inválido. Por favor, corrija os campos.');
     
-
     const addUserForm = document.getElementById("add-user-form");
 
     // Obtem os valores do formulário
