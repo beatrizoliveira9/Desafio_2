@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuarios</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
 </head>
@@ -15,9 +15,9 @@
         <div class="logo">Lojão de Ofertas</div>
 
         <div class="cabecalho-link">
-            <li><a class="active" href="/home/index.html">Inicio</a></li>
-            <li><a class="active" href="/products/products.html">Produtos</a></li>
-            <li><a class="active" href="/users/users.html">Usuarios</a></li>
+            <li><a class="active" href="../home/index.html">Inicio</a></li>
+            <li><a class="active" href="../products/products.html">Produtos</a></li>
+            <li><a class="active" href="../users/users.html">Usuarios</a></li>
             <div clas="icon">
                 <span><i class="fa-solid fa-cart-shopping"></i></span>
             </div>
@@ -29,29 +29,44 @@
         <h1>Adicionar Usuário</h1>
         <form id="add-user-form">
 
+            <div class="campo-form">
             <label for="firstName">Nome:</label>
-            <input type="text" id="firstName" required>
+            <input type="text" id="firstName" name="firstName" class="inputs">
+            <small></small>
+            </div>
 
+            <div class="campo-form">
             <label for="lastName">Sobrenome:</label>
-            <input type="text" id="lastName" required>
+            <input type="text" id="lastName" name="lastName" class="inputs">
+            <small></small>
+            </div>
 
+            <div class="campo-form">
             <label for="email">Email:</label>
-            <input type="email" id="email" required>
-
+            <input type="text" id="email" name="email" class="inputs">
+            <small></small>
+            </div>
+            
+            <div class="campo-form">
             <label for="age">Idade:</label>
-            <input type="number" id="age">
+            <input type="text" id="age" name="age" class="inputs">
+            <small></small>
+            </div>
 
+            <div class="campo-form">
             <label for="image">Foto:</label>
-            <input type="url" id="image">
-
-            <button type="button" onclick="addUser()">Adicionar</button>
+            <input type="url" id="image" name="image" class="inputs">
+            <small></small>
+            </div>
+                
+            <button type="submit" onclick="addUser()">Adicionar</button>
 
         </form>
         <h1>Lista de Usuários</h1>
         <ul class="grid-container" id="user-list"></ul>
     </div>
-    <script src="user.js"></script>
     <script src="usersScript.js"></script>
+   
 </body>
 
 </html>
